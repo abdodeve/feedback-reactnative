@@ -1,14 +1,14 @@
 import * as React from "react";
 import { View, Text, Button } from "react-native";
-import EmojiQuestionModel from "../components/EmojiQuestionModel";
-import QuestionModel2 from "../components/QuestionModel2";
+import EmojiQuestionModel from "../components/questions/EmojiQuestionModel";
+import YesOrNoModel from "../components/questions/YesOrNoModel";
 
 export default function QuestionsScreen(props) {
   const [questionState, setQuestionState] = React.useState(0);
 
   const allQuestionsComponent = [
     <EmojiQuestionModel />,
-    <QuestionModel2 />,
+    <YesOrNoModel />,
     <EmojiQuestionModel />,
   ];
 
