@@ -9,7 +9,6 @@ export default function CommentQuestionModel(props) {
     <View>
       <View
         style={{
-          // alignItems: "center",
           // justifyContent: "center",
           flexDirection: "row",
           justifyContent: "space-between",
