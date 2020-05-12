@@ -20,43 +20,44 @@ export default function QuestionsScreen(props) {
 
   return (
     <ImageBackground
-      style={styles.container}
-      source={require("../assets/images/1.jpg")}
+      source={require("../assets/images/food.jpg")}
       style={styles.ImageBg}
     >
-      <View style={styles.container}>
-        <TouchableOpacity>
-          <AntDesign
-            color="white"
-            name="rightcircle"
-            size={32}
-            onPress={() => {
-              console.log("clicked Before", questionState);
-              if (questionState === 0) return;
-              setQuestionState(() => {
-                return questionState - 1;
-              });
-            }}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <AntDesign
-            title="befor"
-            name="leftcircle"
-            color="white"
-            size={32}
-            onPress={() => {
-              console.log("clicked Next");
-              if (questionState === allQuestionsComponent.length - 1) return;
-              setQuestionState(() => {
-                return questionState + 1;
-              });
-            }}
-          />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.ItemQuestion}>
-        {allQuestionsComponent[questionState]}
+      <View style={styles.Overlay}>
+        <View style={styles.container}>
+          <TouchableOpacity>
+            <AntDesign
+              color="white"
+              name="rightcircle"
+              size={32}
+              onPress={() => {
+                console.log("clicked Before", questionState);
+                if (questionState === 0) return;
+                setQuestionState(() => {
+                  return questionState - 1;
+                });
+              }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <AntDesign
+              title="befor"
+              name="leftcircle"
+              color="white"
+              size={32}
+              onPress={() => {
+                console.log("clicked Next");
+                if (questionState === allQuestionsComponent.length - 1) return;
+                setQuestionState(() => {
+                  return questionState + 1;
+                });
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.ItemQuestion}>
+          {allQuestionsComponent[questionState]}
+        </View>
       </View>
     </ImageBackground>
   );
@@ -67,14 +68,17 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 10,
-    height: 15,
-    width: "100%",
     flex: 1,
-    overflow: "hidden",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    padding: 10,
   },
+  Overlay: {
+    backgroundColor: "rgba(65, 87, 210, 0.67)",
+    width: "100%",
+    height: "100%",
+  },
+
   ItemQuestion: {
     alignItems: "center",
     justifyContent: "center",

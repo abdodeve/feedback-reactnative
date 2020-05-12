@@ -1,7 +1,7 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { SplashScreen } from "expo";
-import * as Font from "expo-font";
+
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -9,7 +9,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import QuestionsScreen from "./screens/QuestionsScreen";
 
 const Stack = createStackNavigator();
-
 export default function App(props) {
   return (
     <NavigationContainer>
