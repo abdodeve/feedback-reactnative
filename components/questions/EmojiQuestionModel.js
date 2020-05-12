@@ -1,4 +1,6 @@
 import * as React from "react";
+
+import Colors from "../../constants/Colors";
 import {
   View,
   Text,
@@ -16,10 +18,36 @@ export default function EmojiQuestionModel(props) {
           Rate Your Dinig Exprience As Per The Following Aspects
         </Text>
       </View>
+      <View style={{ marginBottom: 50 }}>
+        <View style={styles.Items}>
+          <View style={styles.TitleQuesion}>
+            <Text style={styles.Titlefood}>Tast & Food Quality </Text>
+          </View>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/smily1.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/smily2.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/angry2.png")}
+            />
+          </TouchableOpacity>
 
-      <View style={styles.Items}>
-        <View style={styles.TitleQuesion}>
-          <Text style={styles.Titlefood}>Tast & Food Quality </Text>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/angry2.png")}
+            />
+          </TouchableOpacity>
         </View>
         <TouchableOpacity>
           <Image
@@ -145,9 +173,8 @@ const styles = StyleSheet.create({
   },
 
   ImagContainer: {
-    width: 50,
-    height: 50,
-    //Color: "white",
+    width: 40,
+    height: 40,
     marginRight: 30,
   },
 });
