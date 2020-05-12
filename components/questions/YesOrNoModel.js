@@ -1,29 +1,55 @@
-import { Ionicons } from "@expo/vector-icons";
 import * as React from "react";
-import { View, Text, Button } from "react-native";
-
-import Colors from "../../constants/Colors";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Button,
+} from "react-native";
 
 export default function YesOrNoModel(props) {
   return (
-    <View>
-      <View>
-        <Text>Would you like recommende us to others ?</Text>
-      </View>
-      <View
-        style={{
-          // alignItems: "center",
-          // justifyContent: "center",
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
-        <Text style={{ marginRight: 60 }}>Angry1</Text>
-        <Text style={{ marginRight: 60 }}>Not Angry</Text>
-        <Text style={{ marginRight: 60 }}>Normale</Text>
-        <Text style={{ marginRight: 60 }}>Smile</Text>
-        <Text style={{ marginRight: 60 }}>Happy</Text>
-      </View>
+    <View style={{ flexDirection: "row" }}>
+      <TouchableOpacity style={styles.Container}>
+        <Text style={styles.Text}>Yes</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.Container2}>
+        <Text style={styles.Text}>No</Text>
+      </TouchableOpacity>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  Container: {
+    borderRadius: 70,
+    backgroundColor: "rgba(25, 131, 17, 0.7)",
+    height: 150,
+    width: 150,
+    margin: 12,
+    alignItems: "center",
+    padding: 35,
+    borderColor: "red",
+  },
+
+  Container2: {
+    borderRadius: 70,
+    backgroundColor: "rgba(131, 17, 47, 0.66)",
+    height: 150,
+    width: 150,
+    margin: 12,
+    alignItems: "center",
+    padding: 35,
+  },
+
+  Text: {
+    color: "white",
+    fontSize: 60,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+  },
+});

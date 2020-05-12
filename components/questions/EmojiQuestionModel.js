@@ -18,6 +18,7 @@ export default function EmojiQuestionModel(props) {
           Rate Your Dinig Exprience As Per The Following Aspects
         </Text>
       </View>
+      {/* Line 1 */}
       <View style={{ marginBottom: 50 }}>
         <View style={styles.Items}>
           <View style={styles.TitleQuesion}>
@@ -49,93 +50,72 @@ export default function EmojiQuestionModel(props) {
             />
           </TouchableOpacity>
         </View>
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/smily1.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/smily2.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/angry2.png")}
-          />
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/angry1.png")}
-          />
-        </TouchableOpacity>
       </View>
+      {/* Line 2 */}
+      <View style={{ marginBottom: 50 }}>
+        <View style={styles.Items}>
+          <View style={styles.TitleQuesion}>
+            <Text style={styles.Titlefood}>Tast & Food Quality </Text>
+          </View>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/smily1.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/smily2.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/angry2.png")}
+            />
+          </TouchableOpacity>
 
-      <View style={styles.Items}>
-        <View style={styles.TitleQuesion}>
-          <Text style={styles.Titlefood}>Speed Of Service</Text>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/angry2.png")}
+            />
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/smily1.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/smily2.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/angry2.png")}
-          />
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/angry1.png")}
-          />
-        </TouchableOpacity>
       </View>
-      <View style={styles.Items}>
-        <View style={styles.TitleQuesion}>
-          <Text style={styles.Titlefood}>Staff Behaviour</Text>
+      {/* Line 3 */}
+      <View style={{ marginBottom: 50 }}>
+        <View style={styles.Items}>
+          <View style={styles.TitleQuesion}>
+            <Text style={styles.Titlefood}>Tast & Food Quality </Text>
+          </View>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/smily1.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/smily2.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/angry2.png")}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <Image
+              style={styles.ImagContainer}
+              source={require("../../assets/images/Emoji/angry2.png")}
+            />
+          </TouchableOpacity>
         </View>
-
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/smily1.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/smily2.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/angry2.png")}
-          />
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Image
-            style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/angry1.png")}
-          />
-        </TouchableOpacity>
       </View>
     </View>
   );
