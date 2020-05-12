@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 export default function QuestionModel2(props) {
   return (
-    <View style={(style = styles.Screen)}>
+    <View style={styles.Screen}>
       <View style={styles.ContainerTitle1}>
         <Text style={styles.title1}>WELCOME</Text>
       </View>

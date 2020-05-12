@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import EmojiQuestionModel from "../components/EmojiQuestionModel";
 import QuestionModel2 from "../components/QuestionModel2";
+import QuestionModel3 from "../components/QuestionModel3";
 
 import { AntDesign } from "@expo/vector-icons";
 export default function QuestionsScreen(props) {
@@ -15,7 +16,7 @@ export default function QuestionsScreen(props) {
   const allQuestionsComponent = [
     <EmojiQuestionModel />,
     <QuestionModel2 />,
-    <EmojiQuestionModel />,
+    <QuestionModel3 />,
   ];
 
   return (
