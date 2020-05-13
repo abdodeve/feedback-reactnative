@@ -5,8 +5,8 @@ import {
   ImageBackground,
   StyleSheet,
 } from "react-native";
+import MultipteQuestionsModel from "../components/questions/MultipteQuestionsModel";
 import EmojiQuestionModel from "../components/questions/EmojiQuestionModel";
-import QuestionModel2 from "../components/questions/QuestionModel2";
 import YesOrNoModel from "../components/questions/YesOrNoModel";
 
 import { AntDesign } from "@expo/vector-icons";
@@ -16,7 +16,7 @@ export default function QuestionsScreen(props) {
   const allQuestionsComponent = [
     <YesOrNoModel />,
     <EmojiQuestionModel />,
-    <QuestionModel2 />,
+    <MultipteQuestionsModel />,
   ];
 
   return (

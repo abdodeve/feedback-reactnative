@@ -1,160 +1,84 @@
 import * as React from "react";
-
-import Colors from "../../constants/Colors";
-import {
-  View,
-  Text,
-  Button,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 export default function EmojiQuestionModel(props) {
   return (
-    <View style={styles.Container}>
-      <View>
-        <Text style={styles.title}>
-          Rate Your Dinig Exprience As Per The Following Aspects
-        </Text>
+    <View style={styles.Screen}>
+      <View style={styles.ContainerTitle1}>
+        <Text style={styles.title1}>WELCOME</Text>
       </View>
-      {/* Line 1 */}
-      <View>
-        <View style={styles.Items}>
-          <View style={styles.TitleQuesion}>
-            <Text style={styles.Titlefood}>Tast & Food Quality </Text>
-          </View>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily1.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily2.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry1.png")}
-            />
-          </TouchableOpacity>
-        </View>
+      <View style={styles.ContainerTitle2}>
+        <Text style={styles.title2}>Please Rate Our Service</Text>
       </View>
-      {/* Line 2 */}
-      <View>
-        <View style={styles.Items}>
-          <View style={styles.TitleQuesion}>
-            <Text style={styles.Titlefood}>Speed Of Service </Text>
-          </View>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily1.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily2.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
-            />
-          </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry1.png")}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
-      {/* Line 3 */}
-      <View>
-        <View style={styles.Items}>
-          <View style={styles.TitleQuesion}>
-            <Text style={styles.Titlefood}>Staff Behaviour </Text>
-          </View>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily1.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily2.png")}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
-            />
-          </TouchableOpacity>
+      <View style={styles.Items}>
+        <TouchableOpacity>
+          <Image
+            style={styles.ImagContainer}
+            source={require("../../assets/images/Emoji/star5.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            style={styles.ImagContainer}
+            source={require("../../assets/images/Emoji/star4.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            style={styles.ImagContainer}
+            source={require("../../assets/images/Emoji/star3.png")}
+          />
+        </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Image
-              style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry1.png")}
-            />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity>
+          <Image
+            style={styles.ImagContainer}
+            source={require("../../assets/images/Emoji/star2.png")}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  Container: { marginBottom: 50 },
-  title: {
-    fontSize: 24,
+  Screen: {
+    flex: 1,
+    justifyContent: "center",
     alignItems: "center",
-    marginBottom: 60,
+  },
+  ContainerTitle1: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 50,
+  },
+  title1: {
     color: "white",
-    fontWeight: "bold",
+    fontSize: 52,
+  },
+  ContainerTitle2: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 50,
+    padding: 50,
+  },
+  title2: {
+    color: "white",
+    fontSize: 32,
   },
   Items: {
-    alignItems: "center",
+    alignItems: "flex-end",
     justifyContent: "center",
     flexDirection: "row",
-    flexDirection: "row",
-    //alignItems: "center",
-    padding: 4,
+    padding: 20,
+    paddingLeft: 60,
   },
-  TitleQuesion: {
-    alignItems: "center",
-    marginRight: 10,
-    color: "white",
-    width: 200,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  Titlefood: {
-    color: "white",
-    fontSize: 19,
-    fontWeight: "bold",
-  },
-
   ImagContainer: {
-    width: 40,
-    height: 40,
-    marginRight: 30,
+    width: 90,
+    height: 90,
+    marginRight: 20,
   },
 });
