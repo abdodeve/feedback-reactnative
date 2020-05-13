@@ -13,12 +13,11 @@ export default function YesOrNoModel(props) {
     <View>
       <Text
         style={{
-          flex: 1,
+          // flex: 1,
           justifyContent: "center",
           alignItems: "center",
           color: "white",
           fontSize: 20,
-          //padding: 50,
           paddingBottom: 50,
         }}
       >
