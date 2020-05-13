@@ -15,26 +15,26 @@ export default function QuestionModel2(props) {
         <TouchableOpacity>
           <Image
             style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/star5.png")}
+            source={require("../../assets/images/Emoji/star5.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
             style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/star4.png")}
+            source={require("../../assets/images/Emoji/star4.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
             style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/star3.png")}
+            source={require("../../assets/images/Emoji/star3.png")}
           />
         </TouchableOpacity>
 
         <TouchableOpacity>
           <Image
             style={styles.ImagContainer}
-            source={require("../assets/images/Emoji/star2.png")}
+            source={require("../../assets/images/Emoji/star2.png")}
           />
         </TouchableOpacity>
       </View>
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   title1: {
     color: "white",
     fontSize: 52,
-    fontFamily: "open-sans-bold",
   },
   ContainerTitle2: {
     flex: 1,
