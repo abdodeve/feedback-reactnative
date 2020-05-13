@@ -10,21 +10,42 @@ import {
 
 export default function YesOrNoModel(props) {
   return (
-    <View style={{ flexDirection: "row" }}>
-      <TouchableOpacity style={styles.Container}>
-        <Text style={styles.Text}>Yes</Text>
-      </TouchableOpacity>
+    <View>
+      <Text
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          fontSize: 20,
+          //padding: 50,
+          paddingBottom: 50,
+        }}
+      >
+        Great ! Want To Sign Up For Our Exclusive Email Offers ?
+      </Text>
 
-      <TouchableOpacity style={styles.Container2}>
-        <Text style={styles.Text}>No</Text>
-      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
+        <TouchableOpacity style={styles.Container}>
+          <Text style={styles.Text}>Yes</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.Container2}>
+          <Text style={styles.Text}>No</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   Container: {
-    borderRadius: 70,
+    borderRadius: 35,
     backgroundColor: "rgba(25, 131, 17, 0.7)",
     height: 150,
     width: 150,
@@ -35,7 +56,7 @@ const styles = StyleSheet.create({
   },
 
   Container2: {
-    borderRadius: 70,
+    borderRadius: 35,
     backgroundColor: "rgba(131, 17, 47, 0.66)",
     height: 150,
     width: 150,

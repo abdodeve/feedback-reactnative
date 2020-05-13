@@ -19,7 +19,7 @@ export default function EmojiQuestionModel(props) {
         </Text>
       </View>
       {/* Line 1 */}
-      <View style={{ marginBottom: 50 }}>
+      <View>
         <View style={styles.Items}>
           <View style={styles.TitleQuesion}>
             <Text style={styles.Titlefood}>Tast & Food Quality </Text>
@@ -46,16 +46,16 @@ export default function EmojiQuestionModel(props) {
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../assets/images/Emoji/angry1.png")}
             />
           </TouchableOpacity>
         </View>
       </View>
       {/* Line 2 */}
-      <View style={{ marginBottom: 50 }}>
+      <View>
         <View style={styles.Items}>
           <View style={styles.TitleQuesion}>
-            <Text style={styles.Titlefood}>Tast & Food Quality </Text>
+            <Text style={styles.Titlefood}>Speed Of Service </Text>
           </View>
           <TouchableOpacity>
             <Image
@@ -79,16 +79,16 @@ export default function EmojiQuestionModel(props) {
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../assets/images/Emoji/angry1.png")}
             />
           </TouchableOpacity>
         </View>
       </View>
       {/* Line 3 */}
-      <View style={{ marginBottom: 50 }}>
+      <View>
         <View style={styles.Items}>
           <View style={styles.TitleQuesion}>
-            <Text style={styles.Titlefood}>Tast & Food Quality </Text>
+            <Text style={styles.Titlefood}>Staff Behaviour </Text>
           </View>
           <TouchableOpacity>
             <Image
@@ -112,7 +112,7 @@ export default function EmojiQuestionModel(props) {
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../assets/images/Emoji/angry1.png")}
             />
           </TouchableOpacity>
         </View>

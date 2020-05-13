@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   title1: {
     color: "white",
     fontSize: 52,
-    fontFamily: "open-sans-bold",
   },
   ContainerTitle2: {
     flex: 1,

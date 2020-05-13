@@ -14,9 +14,9 @@ export default function QuestionsScreen(props) {
   const [questionState, setQuestionState] = React.useState(0);
 
   const allQuestionsComponent = [
+    <YesOrNoModel />,
     <EmojiQuestionModel />,
     <QuestionModel2 />,
-    <YesOrNoModel />,
   ];
 
   return (
@@ -29,8 +29,8 @@ export default function QuestionsScreen(props) {
           <TouchableOpacity>
             <AntDesign
               color="white"
-              name="rightcircle"
-              size={32}
+              name="leftcircle"
+              size={33}
               onPress={() => {
                 console.log("clicked Before", questionState);
                 if (questionState === 0) return;
@@ -43,9 +43,9 @@ export default function QuestionsScreen(props) {
           <TouchableOpacity>
             <AntDesign
               title="befor"
-              name="leftcircle"
+              name="rightcircle"
               color="white"
-              size={32}
+              size={33}
               onPress={() => {
                 console.log("clicked Next");
                 if (questionState === allQuestionsComponent.length - 1) return;
