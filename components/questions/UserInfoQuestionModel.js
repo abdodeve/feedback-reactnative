@@ -6,7 +6,7 @@ import {
   Text,
   StyleSheet,
   Image,
-  Button,
+  CheckBox,
 } from "react-native";
 
 import Colors from "../../constants/Colors";
@@ -50,7 +50,7 @@ export default function UserInfoQuestionModel(props) {
               <Text
                 style={{ fontSize: 14, color: "white", fontWeight: "bold" }}
               >
-                Tel Me the throw
+                Tel Me the throw dind me
               </Text>
             </View>
             <View style={{ flexDirection: "row" }}>
@@ -78,7 +78,7 @@ export default function UserInfoQuestionModel(props) {
               <Text
                 style={{ fontSize: 14, color: "white", fontWeight: "bold" }}
               >
-                Tel Me the throw
+                Tel Me the throw in r
               </Text>
             </View>
             <View style={{ flexDirection: "row" }}>
@@ -100,6 +100,26 @@ export default function UserInfoQuestionModel(props) {
                   source={require("../../assets/images/Emoji/smily1.png")}
                 />
               </TouchableOpacity>
+            </View>
+            <View style={{ padding: 7 }}>
+              <Text
+                style={{ fontSize: 14, color: "white", fontWeight: "bold" }}
+              >
+                Tel Me the throw dind me after thids meil
+              </Text>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginLeft: 9,
+              }}
+            >
+              <CheckBox value={false} />
+              <Text style={{ marginLeft: 5, color: "white" }}>YES</Text>
+
+              <CheckBox value={true} style={{ marginLeft: 20 }} />
+              <Text style={{ marginLeft: 5, color: "white" }}>No</Text>
             </View>
             {/*Ligne Emoji 2 */}
           </View>
