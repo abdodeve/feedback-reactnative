@@ -8,12 +8,14 @@ import {
 import EmojiQuestionModel from "../components/questions/EmojiQuestionModel";
 import QuestionModel2 from "../components/questions/QuestionModel2";
 import YesOrNoModel from "../components/questions/YesOrNoModel";
+import UserInfoQuestionModel from "../components/questions/UserInfoQuestionModel";
 
 import { AntDesign } from "@expo/vector-icons";
 export default function QuestionsScreen(props) {
   const [questionState, setQuestionState] = React.useState(0);
 
   const allQuestionsComponent = [
+    <UserInfoQuestionModel />,
     <YesOrNoModel />,
     <EmojiQuestionModel />,
     <QuestionModel2 />,
@@ -65,21 +67,22 @@ export default function QuestionsScreen(props) {
 }
 const styles = StyleSheet.create({
   ImageBg: {
-    height: "100%",
+    //height: "100%",
     width: "100%",
-  },
-  container: {
     flex: 1,
-    justifyContent: "space-between",
-    flexDirection: "row",
-    padding: 10,
   },
+
   Overlay: {
     backgroundColor: "rgba(65, 87, 210, 0.67)",
     width: "100%",
     height: "100%",
   },
-
+  container: {
+    //flex: 1,
+    justifyContent: "space-between",
+    flexDirection: "row",
+    padding: 10,
+  },
   ItemQuestion: {
     alignItems: "center",
     justifyContent: "center",
