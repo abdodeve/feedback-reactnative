@@ -14,6 +14,8 @@ import Colors from "../../constants/Colors";
 import { TextInput } from "react-native-gesture-handler";
 
 export default function UserInfoQuestionModel(props) {
+  const [question1, setQuestion1] = React.useState([false, false, false]);
+
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -21,26 +23,37 @@ export default function UserInfoQuestionModel(props) {
         <View style={styles.screen1}>
           <View style={styles.EmojiItems}>
             <View style={{ padding: 7 }}>
-              <Text
-                style={{ fontSize: 14, color: "white", fontWeight: "bold" }}
-              >
-                OVERALL EXPERIENCE
-              </Text>
+              <Text style={styles.TextQuestion}>OVERALL EXPERIENCE</Text>
             </View>
             <View style={{ flexDirection: "row" }}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setQuestion1([true, false, false]);
+                  console.log("tssstds");
+                }}
+              >
                 <Image
                   style={styles.ImagContainer}
                   source={require("../../assets/images/Emoji/smily1.png")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setQuestion1([false, true, false]);
+                  console.log("tssstds");
+                }}
+              >
                 <Image
                   style={styles.ImagContainer}
                   source={require("../../assets/images/Emoji/smily2.png")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setQuestion1([false, false, true]);
+                  console.log("tssstds");
+                }}
+              >
                 <Image
                   style={styles.ImagContainer}
                   source={require("../../assets/images/Emoji/angry1.png")}
@@ -49,11 +62,7 @@ export default function UserInfoQuestionModel(props) {
             </View>
             {/*Ligne Emoji 2 */}
             <View style={{ padding: 7 }}>
-              <Text
-                style={{ fontSize: 14, color: "white", fontWeight: "bold" }}
-              >
-                SERVICE
-              </Text>
+              <Text style={styles.TextQuestion}>SERVICE</Text>
             </View>
             <View style={{ flexDirection: "row" }}>
               <TouchableOpacity>
@@ -77,11 +86,7 @@ export default function UserInfoQuestionModel(props) {
             </View>
             {/* Lign Emoji 3 */}
             <View style={{ padding: 7 }}>
-              <Text
-                style={{ fontSize: 14, color: "white", fontWeight: "bold" }}
-              >
-                AMBIENCE
-              </Text>
+              <Text style={styles.TextQuestion}>AMBIENCE</Text>
             </View>
             <View style={{ flexDirection: "row" }}>
               <TouchableOpacity>
@@ -104,19 +109,11 @@ export default function UserInfoQuestionModel(props) {
               </TouchableOpacity>
             </View>
             <View style={{ padding: 7 }}>
-              <Text
-                style={{ fontSize: 14, color: "white", fontWeight: "bold" }}
-              >
+              <Text style={styles.TextQuestion}>
                 Was This Meal Value For Money
               </Text>
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                marginLeft: 9,
-              }}
-            >
+            <View style={styles.CheckboxContainer}>
               <CheckBox value={false} />
               <Text style={{ marginLeft: 5, color: "white" }}>YES</Text>
 
@@ -129,34 +126,13 @@ export default function UserInfoQuestionModel(props) {
         {/* Line : Input & Text area */}
 
         <View style={styles.screen2}>
-          <View style={styles.InputInfo} />
+          <View style={styles.UsertInfo} />
           <View style={{ padding: 7 }}>
-            <Text
-              style={{
-                fontSize: 14,
-                color: "white",
-                fontWeight: "bold",
-                right: 15,
-              }}
-            >
-              Additional Comments (Optional)
-            </Text>
+            <Text style={styles.TextAreainfo}>Add Comments (Optional)</Text>
           </View>
           <View style={{ flexDirection: "row" }}>
             <TextInput
-              style={{
-                height: 70,
-                width: 200,
-                right: 10,
-                // borderColor: "black",
-                borderBottomWidth: 2,
-                borderBottomColor: "green",
-
-                backgroundColor: "white",
-                color: "black",
-                textAlignVertical: "top",
-                borderRadius: 5,
-              }}
+              style={styles.TextAreaImput}
               //  multiline
               numberOfLines={16}
               editable
@@ -171,16 +147,7 @@ export default function UserInfoQuestionModel(props) {
           >
             <TextInput
               placeholder="Enter your name"
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                width: 192,
-                textAlign: "center",
-                borderRadius: 5,
-                borderBottomWidth: 2,
-                borderBottomColor: "green",
-                right: 10,
-              }}
+              style={styles.TextInputNameEmailPhon}
             />
           </View>
 
@@ -188,32 +155,14 @@ export default function UserInfoQuestionModel(props) {
             <TextInput
               textContentType="emailAddress"
               placeholder="Exemple@User.com"
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                width: 192,
-                textAlign: "center",
-                borderRadius: 5,
-                borderBottomWidth: 2,
-                borderBottomColor: "green",
-                right: 10,
-              }}
+              style={styles.TextInputNameEmailPhon}
             />
           </View>
           <View style={{ paddingTop: 8 }}>
             <TextInput
               textContentType="telephoneNumber"
               placeholder="+00 05 25 65 45"
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                width: 192,
-                textAlign: "center",
-                borderRadius: 5,
-                right: 10,
-                borderBottomWidth: 2,
-                borderBottomColor: "green",
-              }}
+              style={styles.TextInputNameEmailPhon}
             />
           </View>
           <View
@@ -221,7 +170,7 @@ export default function UserInfoQuestionModel(props) {
               flexDirection: "row",
               alignItems: "center",
               marginTop: 10,
-              right: 20,
+              right: 9,
             }}
           >
             <CheckBox value={false} />
@@ -236,7 +185,7 @@ export default function UserInfoQuestionModel(props) {
             </Text>
           </View>
           <View
-            style={{ flexDirection: "row", alignItems: "center", right: 20 }}
+            style={{ flexDirection: "row", alignItems: "center", right: 9 }}
           >
             <CheckBox value={false} />
             <Text style={{ marginLeft: 5, color: "white", fontWeight: "bold" }}>
@@ -247,7 +196,13 @@ export default function UserInfoQuestionModel(props) {
       </View>
       {/* Line Button Submit */}
       <View style={styles.containerBtn}>
-        <TouchableOpacity style={styles.buttonSubmit}>
+        <TouchableOpacity
+          onPress={() => {
+            console.log("question1===>", question1);
+            /* const data = { overallExperience: question1, service: question2 };*/
+          }}
+          style={styles.buttonSubmit}
+        >
           <Text style={styles.TextSubmait}>SUBMIT</Text>
         </TouchableOpacity>
       </View>
@@ -276,17 +231,53 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     // backgroundColor: "rgba(25, 181, 30, 0.7)",
   },
+  TextQuestion: { fontSize: 14, color: "white", fontWeight: "bold" },
   ImagContainer: {
     width: 40,
     height: 40,
     marginRight: 30,
   },
-  InputInfo: {
+  CheckboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 9,
+  },
+  UsertInfo: {
     // width: 300,
     //height: 290,
     // marginHorizontal: 50,
+
     backgroundColor: "rgba(25, 181, 30, 0.7)",
     //paddingHorizontal: 20,
+  },
+  TextAreainfo: {
+    fontSize: 13,
+    color: "white",
+    fontWeight: "bold",
+    marginRight: 10,
+  },
+  TextAreaImput: {
+    height: 70,
+    width: 170,
+    right: 10,
+    // borderColor: "black",
+    borderBottomWidth: 2,
+    borderBottomColor: "green",
+
+    backgroundColor: "white",
+    color: "black",
+    textAlignVertical: "top",
+    borderRadius: 5,
+  },
+  TextInputNameEmailPhon: {
+    backgroundColor: "white",
+    color: "black",
+    width: 170,
+    textAlign: "center",
+    borderRadius: 5,
+    borderBottomWidth: 2,
+    borderBottomColor: "green",
+    right: 10,
   },
   containerBtn: {
     marginBottom: 73,

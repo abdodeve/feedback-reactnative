@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
+  Text,
 } from "react-native";
 import EmojiQuestionModel from "../components/questions/EmojiQuestionModel";
 import QuestionModel2 from "../components/questions/QuestionModel2";
@@ -42,6 +43,21 @@ export default function QuestionsScreen(props) {
               }}
             />
           </TouchableOpacity>
+
+          <Text
+            style={{
+              backgroundColor: "rgba(85, 97, 310, 2.67)",
+              borderRadius: 50,
+              textAlign: "center",
+              padding: 10,
+              fontSize: 25,
+              color: "white",
+              fontWeight: "900",
+            }}
+          >
+            1
+          </Text>
+
           <TouchableOpacity>
             <AntDesign
               title="befor"
