@@ -8,14 +8,22 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import QuestionsScreen from "./screens/QuestionsScreen";
 
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./reducers";
+
+const store = createStore(rootReducer);
+
 const Stack = createStackNavigator();
 export default function App(props) {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="questions" headerMode="none">
-        <Stack.Screen name="questions" component={QuestionsScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="questions" headerMode="none">
+          <Stack.Screen name="questions" component={QuestionsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 

@@ -7,8 +7,16 @@ import {
   TouchableOpacity,
   Button,
 } from "react-native";
+import { connect } from "react-redux";
+import { addQuestions } from "../../actions";
 
-export default function YesOrNoModel(props) {
+const YesOrNoModel = ({ questions, addQuestion }) => {
+  const [responseState, setResponseState] = React.useState({
+    questionId: "2",
+    questionType: "yesOrNo",
+    selectedResponse: null,
+  });
+
   return (
     <View>
       <Text
@@ -31,17 +39,43 @@ export default function YesOrNoModel(props) {
           justifyContent: "center",
         }}
       >
-        <TouchableOpacity style={styles.Container}>
+        <TouchableOpacity
+          style={styles.Container}
+          onPress={() => {
+            const resp = { ...responseState, selectedResponse: 1 };
+            addQuestion(resp);
+          }}
+        >
           <Text style={styles.Text}>Yes</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.Container2}>
+        <TouchableOpacity
+          style={styles.Container2}
+          onPress={() => {
+            const resp = { ...responseState, selectedResponse: 2 };
+            addQuestion(resp);
+          }}
+        >
           <Text style={styles.Text}>No</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
-}
+};
+
+const mapStateToProps = (state) => ({
+  questions: state,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addQuestion: (response) => {
+      dispatch(addQuestions(response));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(YesOrNoModel);
 
 const styles = StyleSheet.create({
   Container: {
