@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   View,
+  Text,
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
@@ -8,15 +9,26 @@ import {
 import MultipteQuestionsModel from "../components/questions/MultipteQuestionsModel";
 import EmojiQuestionModel from "../components/questions/EmojiQuestionModel";
 import YesOrNoModel from "../components/questions/YesOrNoModel";
+import ValidationModel from "../components/questions/ValidationModel";
+import { connect } from "react-redux";
+import { addQuestions } from "../actions";
 
 import { AntDesign } from "@expo/vector-icons";
-export default function QuestionsScreen(props) {
+
+const QuestionsScreen = ({ questions, addQuestion }) => {
   const [questionState, setQuestionState] = React.useState(0);
 
+  const NB_QUESTIONS = 3;
   const allQuestionsComponent = [
+    // <YesOrNoModel />,
+    // <YesOrNoModel />,
     <YesOrNoModel />,
-    <EmojiQuestionModel />,
-    <MultipteQuestionsModel />,
+    <EmojiQuestionModel
+      nbQuestions={NB_QUESTIONS}
+      currentQuestionState={questionState}
+      changeQuestionState={setQuestionState}
+    />,
+    <ValidationModel />,
   ];
 
   return (
@@ -33,36 +45,65 @@ export default function QuestionsScreen(props) {
               size={33}
               onPress={() => {
                 console.log("clicked Before", questionState);
-                if (questionState === 0) return;
-                setQuestionState(() => {
-                  return questionState - 1;
-                });
+                console.log("state questions ===>", questions);
+                if (questionState <= 0) return;
+                if (questionState > 0) {
+                  setQuestionState(() => {
+                    return questionState - 1;
+                  });
+                }
               }}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <AntDesign
-              title="befor"
+              title="next"
               name="rightcircle"
               color="white"
               size={33}
               onPress={() => {
                 console.log("clicked Next");
+                // dispatch(addQuestions({ text1: "hello works" }));
+                console.log("addQuestion===>", addQuestion);
+                // addQuestion(123);
+                // dispatch(addQuestions({ text1: "hello works" }));
                 if (questionState === allQuestionsComponent.length - 1) return;
-                setQuestionState(() => {
-                  return questionState + 1;
-                });
+                if (questionState < allQuestionsComponent.length - 1) {
+                  setQuestionState(() => {
+                    return questionState + 1;
+                  });
+                }
               }}
             />
           </TouchableOpacity>
         </View>
         <View style={styles.ItemQuestion}>
+          <Text>questionState: {questionState}</Text>
           {allQuestionsComponent[questionState]}
         </View>
       </View>
     </ImageBackground>
   );
-}
+};
+
+const mapStateToProps = (state) => ({
+  questions: state,
+});
+
+// const mapDispatchToProps = (dispatch) => ( {
+//   addQuestion: () => dispatch(addQuestions({ text1: "hello works" })),
+// });
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // addQuestion: (nb) => {
+    //   dispatch(addQuestions({ text1: "hello works 111" }));
+    // },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionsScreen);
+
 const styles = StyleSheet.create({
   ImageBg: {
     height: "100%",

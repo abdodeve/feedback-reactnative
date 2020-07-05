@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function MultipteQuestionsModel(props) {
+export default function ValidationModel(props) {
   return (
     <View style={styles.Container}>
       <View>
