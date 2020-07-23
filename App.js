@@ -8,11 +8,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import QuestionsScreen from "./screens/QuestionsScreen";
 
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers";
+import thunk from "redux-thunk";
 
-const store = createStore(rootReducer);
+// const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const Stack = createStackNavigator();
 export default function App(props) {

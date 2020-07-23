@@ -8,9 +8,9 @@ import {
   Button,
 } from "react-native";
 import { connect } from "react-redux";
-import { addQuestions } from "../../actions";
+import { addQuestions, storeAnswersApi } from "../../actions";
 
-const ValidationModel = ({ questions, addQuestion }) => {
+const ValidationModel = ({ questions, storeAnswersApi }) => {
   // setTimeout(() => {
   //   props.changeQuestionState(() => {
   //     return props.currentQuestionState + 1;
@@ -38,8 +38,9 @@ const ValidationModel = ({ questions, addQuestion }) => {
           <Button
             title="Validate"
             onPress={() => {
-              console.log("123");
-              console.log(questions);
+              // console.log("123");
+              // console.log(questions);
+              storeAnswersApi("123");
             }}
           />
         </TouchableOpacity>
@@ -56,6 +57,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addQuestion: (response) => {
       dispatch(addQuestions(response));
+    },
+    storeAnswersApi: (response) => {
+      dispatch(storeAnswersApi(response));
     },
   };
 };

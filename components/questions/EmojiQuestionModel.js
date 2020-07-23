@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
-import { addQuestions } from "../../actions";
+import { addQuestions, fetchArticleDetails } from "../../actions";
 
 const EmojiQuestionModel = ({ questions, addQuestion }) => {
   // setTimeout(() => {
@@ -110,6 +110,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addQuestion: (response) => {
       dispatch(addQuestions(response));
+      // dispatch(fetchArticleDetails(response));
     },
   };
 };

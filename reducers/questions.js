@@ -12,14 +12,18 @@ const questions = (state = [], action) => {
       //   return false;
       // });
       // if (isExist) return state;
-      const arr = state.filter(
-        (item) => item.question.questionId !== action.question.questionId
-      );
       console.log("state==========>", state);
-
+      const arr = state.filter((item) => {
+        if (item.question) return false;
+        return item.question.questionId !== action.question.questionId;
+      });
       return [...arr, action];
+    // return { ...state, questions_ABDO: action };
     case "GET_ALL_QUESTIONS":
       return [...state, action];
+    case "STORE_ANSWER":
+      console.log("STORE_ANSWER ==========>", state);
+      return { ...state, STORE_ANSWER: action };
     default:
       return state;
   }
