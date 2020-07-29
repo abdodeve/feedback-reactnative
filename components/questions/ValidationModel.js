@@ -39,8 +39,8 @@ const ValidationModel = ({ questions, storeAnswersApi }) => {
             title="Validate"
             onPress={() => {
               // console.log("123");
-              // console.log(questions);
-              storeAnswersApi("123");
+              console.log(questions);
+              storeAnswersApi(questions);
             }}
           />
         </TouchableOpacity>
@@ -50,7 +50,7 @@ const ValidationModel = ({ questions, storeAnswersApi }) => {
 };
 
 const mapStateToProps = (state) => ({
-  questions: state,
+  questions: state.questions.questionsResponses,
 });
 
 const mapDispatchToProps = (dispatch) => {

@@ -23,21 +23,26 @@ export const fetchUsers = (users) => ({
 export const storeAnswersApi = (arg1) => {
   return function (dispatch, getState) {
     return axios
-      .get("https://jsonplaceholder.typicode.com/todos/1")
+      .get("1https://jsonplaceholder.typicode.com/todos/1")
       .then((data) => {
-        console.log("getState--->", getState());
         dispatch(storeAnswers(data.data));
+      })
+      .catch((error) => {
+        dispatch({ type: "STORE_ANSWERE_ERROR", error: error });
       });
   };
 };
 
 export const fetchArticleDetails = (arg1) => {
   return function (dispatch, getState) {
-    return axios
-      .get("https://jsonplaceholder.typicode.com/todos/1")
-      .then((data) => {
-        // console.log("data--->", data.data);
-        dispatch(fetchUsers(data.data));
-      });
+    return (
+      axios
+        // .get("https://jsonplaceholder.typicode.com/todos/1")
+        .get("ssypicode/todos/1")
+        .then((data) => {
+          // console.log("data--->", data.data);
+          dispatch(fetchUsers(data.data));
+        })
+    );
   };
 };
