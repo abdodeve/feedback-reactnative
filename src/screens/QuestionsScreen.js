@@ -21,9 +21,11 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
 
   const NB_QUESTIONS = 3;
   const allQuestionsComponent = [
-    // <YesOrNoModel />,
-    // <YesOrNoModel />,
-    <YesOrNoModel />,
+    <YesOrNoModel
+      nbQuestions={NB_QUESTIONS}
+      currentQuestionState={questionState}
+      changeQuestionState={setQuestionState}
+    />,
     <EmojiQuestionModel
       nbQuestions={NB_QUESTIONS}
       currentQuestionState={questionState}
@@ -34,7 +36,7 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
 
   return (
     <ImageBackground
-      source={require("../assets/images/food.jpg")}
+      source={require("../../assets/images/food.jpg")}
       style={styles.ImageBg}
     >
       <View style={styles.Overlay}>

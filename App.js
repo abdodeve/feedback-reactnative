@@ -6,11 +6,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import QuestionsScreen from "./screens/QuestionsScreen";
+import QuestionsScreen from "./src/screens/QuestionsScreen";
 
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from "./reducers";
+import rootReducer from "./src/reducers";
 import thunk from "redux-thunk";
 
 // const store = createStore(rootReducer);

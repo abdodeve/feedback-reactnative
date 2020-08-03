@@ -8,9 +8,10 @@ import {
   Button,
 } from "react-native";
 import { connect } from "react-redux";
-import { addQuestions } from "../../actions";
+import actions from "../../actions";
+import utils from "../../utils";
 
-const YesOrNoModel = ({ questions, addQuestion }) => {
+const YesOrNoModel = ({ questions, addQuestion, ownProps }) => {
   const [responseState, setResponseState] = React.useState({
     questionId: "2",
     questionType: "yesOrNo",
@@ -44,6 +45,7 @@ const YesOrNoModel = ({ questions, addQuestion }) => {
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 1 };
             addQuestion(resp);
+            utils.questions.validateAndGoNext(ownProps);
           }}
         >
           <Text style={styles.Text}>Yes</Text>
@@ -54,6 +56,7 @@ const YesOrNoModel = ({ questions, addQuestion }) => {
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 2 };
             addQuestion(resp);
+            utils.questions.validateAndGoNext(ownProps);
           }}
         >
           <Text style={styles.Text}>No</Text>
@@ -63,14 +66,15 @@ const YesOrNoModel = ({ questions, addQuestion }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   questions: state,
+  ownProps: ownProps,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addQuestion: (response) => {
-      dispatch(addQuestions(response));
+      dispatch(actions.questions.addQuestions(response));
     },
   };
 };

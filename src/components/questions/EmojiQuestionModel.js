@@ -1,27 +1,15 @@
 import * as React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
-import { addQuestions, fetchArticleDetails } from "../../actions";
+import actions from "../../actions";
+import utils from "../../utils";
 
-const EmojiQuestionModel = ({ questions, addQuestion }) => {
-  // setTimeout(() => {
-  //   props.changeQuestionState(() => {
-  //     return props.currentQuestionState + 1;
-  //   });
-  // }, 3000);
-
+const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
   const [responseState, setResponseState] = React.useState({
     questionId: "1",
     questionType: "emoji",
     selectedResponse: null,
   });
-
-  function validateAndGoNext() {
-    if (props.currentQuestionState === props.nbQuestions - 1) return;
-    props.changeQuestionState(() => {
-      return props.currentQuestionState + 1;
-    });
-  }
 
   return (
     <View style={styles.Screen}>
@@ -37,18 +25,12 @@ const EmojiQuestionModel = ({ questions, addQuestion }) => {
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 1 };
             addQuestion(resp);
-            // setResponseState(() => {
-            //   return resp;
-            // });
-            // console.log(responseState, resp);
-
-            // validateAndGoNext();
-            // console.log("props.nbQuestions===>", props.nbQuestions);
+            utils.questions.validateAndGoNext(ownProps);
           }}
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../assets/images/Emoji/star2.png")}
+            source={require("../../../assets/images/Emoji/star2.png")}
           />
         </TouchableOpacity>
 
@@ -56,45 +38,48 @@ const EmojiQuestionModel = ({ questions, addQuestion }) => {
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 2 };
             addQuestion(resp);
-            console.log("questions===>", questions);
+            utils.questions.validateAndGoNext(ownProps);
           }}
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../assets/images/Emoji/star2.png")}
+            source={require("../../../assets/images/Emoji/star2.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 3 };
             addQuestion(resp);
+            utils.questions.validateAndGoNext(ownProps);
           }}
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../assets/images/Emoji/star3.png")}
+            source={require("../../../assets/images/Emoji/star3.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 4 };
             addQuestion(resp);
+            utils.questions.validateAndGoNext(ownProps);
           }}
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../assets/images/Emoji/star4.png")}
+            source={require("../../../assets/images/Emoji/star4.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 5 };
             addQuestion(resp);
+            utils.questions.validateAndGoNext(ownProps);
           }}
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../assets/images/Emoji/star5.png")}
+            source={require("../../../assets/images/Emoji/star5.png")}
           />
         </TouchableOpacity>
       </View>
@@ -102,15 +87,15 @@ const EmojiQuestionModel = ({ questions, addQuestion }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   questions: state,
+  ownProps: ownProps,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addQuestion: (response) => {
-      dispatch(addQuestions(response));
-      // dispatch(fetchArticleDetails(response));
+      dispatch(actions.questions.addQuestions(response));
     },
   };
 };

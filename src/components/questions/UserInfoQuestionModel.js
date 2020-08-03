@@ -31,19 +31,19 @@ export default function UserInfoQuestionModel(props) {
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/smily1.png")}
+                  source={require("../../../assets/images/Emoji/smily1.png")}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/smily2.png")}
+                  source={require("../../../assets/images/Emoji/smily2.png")}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/angry1.png")}
+                  source={require("../../../assets/images/Emoji/angry1.png")}
                 />
               </TouchableOpacity>
             </View>
@@ -59,19 +59,19 @@ export default function UserInfoQuestionModel(props) {
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/smily1.png")}
+                  source={require("../../../assets/images/Emoji/smily1.png")}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/smily2.png")}
+                  source={require("../../../assets/images/Emoji/smily2.png")}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/angry1.png")}
+                  source={require("../../../assets/images/Emoji/angry1.png")}
                 />
               </TouchableOpacity>
             </View>
@@ -87,19 +87,19 @@ export default function UserInfoQuestionModel(props) {
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/smily1.png")}
+                  source={require("../../../assets/images/Emoji/smily1.png")}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/smily2.png")}
+                  source={require("../../../assets/images/Emoji/smily2.png")}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image
                   style={styles.ImagContainer}
-                  source={require("../../assets/images/Emoji/angry1.png")}
+                  source={require("../../../assets/images/Emoji/angry1.png")}
                 />
               </TouchableOpacity>
             </View>

@@ -35,26 +35,26 @@ export default function ValidationModel(props) {
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily1.png")}
+              source={require("../../../assets/images/Emoji/smily1.png")}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily2.png")}
+              source={require("../../../assets/images/Emoji/smily2.png")}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../../assets/images/Emoji/angry2.png")}
             />
           </TouchableOpacity>
 
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../../assets/images/Emoji/angry2.png")}
             />
           </TouchableOpacity>
         </View>
@@ -75,26 +75,26 @@ export default function ValidationModel(props) {
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily1.png")}
+              source={require("../../../assets/images/Emoji/smily1.png")}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily2.png")}
+              source={require("../../../assets/images/Emoji/smily2.png")}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../../assets/images/Emoji/angry2.png")}
             />
           </TouchableOpacity>
 
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../../assets/images/Emoji/angry2.png")}
             />
           </TouchableOpacity>
         </View>
@@ -115,26 +115,26 @@ export default function ValidationModel(props) {
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily1.png")}
+              source={require("../../../assets/images/Emoji/smily1.png")}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/smily2.png")}
+              source={require("../../../assets/images/Emoji/smily2.png")}
             />
           </TouchableOpacity>
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../../assets/images/Emoji/angry2.png")}
             />
           </TouchableOpacity>
 
           <TouchableOpacity>
             <Image
               style={styles.ImagContainer}
-              source={require("../../assets/images/Emoji/angry2.png")}
+              source={require("../../../assets/images/Emoji/angry2.png")}
             />
           </TouchableOpacity>
         </View>

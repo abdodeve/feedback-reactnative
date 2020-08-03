@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { connect } from "react-redux";
 import { addQuestions, storeAnswersApi } from "../../actions";
+import actions from "../../actions";
 
 const ValidationModel = ({ questions, storeAnswersApi }) => {
   // setTimeout(() => {
@@ -39,8 +40,9 @@ const ValidationModel = ({ questions, storeAnswersApi }) => {
             title="Validate"
             onPress={() => {
               // console.log("123");
-              console.log(questions);
-              storeAnswersApi(questions);
+              // console.log(questions);
+              // storeAnswersApi(questions);
+              actions.questions.storeAnswersApi(questions);
             }}
           />
         </TouchableOpacity>
@@ -56,10 +58,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   return {
     addQuestion: (response) => {
-      dispatch(addQuestions(response));
+      // dispatch(actions.questions.addQuestions(response));
     },
     storeAnswersApi: (response) => {
-      dispatch(storeAnswersApi(response));
+      // dispatch(actions.questions.storeAnswersApi(response));
     },
   };
 };
