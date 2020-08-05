@@ -13,11 +13,8 @@ const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
 
   return (
     <View style={styles.Screen}>
-      <View style={styles.ContainerTitle1}>
-        <Text style={styles.title1}>WELCOME</Text>
-      </View>
-      <View style={styles.ContainerTitle2}>
-        <Text style={styles.title2}>Please Rate Our Service</Text>
+      <View style={styles.TitleView}>
+        <Text style={styles.Title}>Please Rate Our Service</Text>
       </View>
 
       <View style={styles.Items}>
@@ -108,24 +105,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  ContainerTitle1: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 50,
-  },
   title1: {
     color: "white",
     fontSize: 52,
   },
-  ContainerTitle2: {
+  TitleView: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 50,
     padding: 50,
   },
-  title2: {
+  Title: {
     color: "white",
     fontSize: 32,
   },

@@ -20,28 +20,13 @@ const YesOrNoModel = ({ questions, addQuestion, ownProps }) => {
 
   return (
     <View>
-      <Text
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          color: "white",
-          fontSize: 25,
-          //padding: 50,
-          paddingBottom: 50,
-          fontWeight: "bold",
-        }}
-      >
+      <Text style={styles.Title}>
         Great ! Want To Sign Up For Our Exclusive Email Offers ?
       </Text>
 
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "center",
-        }}
-      >
+      <View style={styles.MainContent}>
         <TouchableOpacity
-          style={styles.Container}
+          style={styles.Button}
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 1 };
             addQuestion(resp);
@@ -52,7 +37,7 @@ const YesOrNoModel = ({ questions, addQuestion, ownProps }) => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.Container2}
+          style={{ ...styles.Button, ...styles.ButtonRed }}
           onPress={() => {
             const resp = { ...responseState, selectedResponse: 2 };
             addQuestion(resp);
@@ -82,9 +67,17 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(YesOrNoModel);
 
 const styles = StyleSheet.create({
-  Container: {
+  Title: {
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white",
+    fontSize: 25,
+    paddingBottom: 50,
+    fontWeight: "bold",
+  },
+  Button: {
     borderRadius: 35,
-    backgroundColor: "rgba(25, 131, 17, 0.7)",
+    backgroundColor: "green",
     height: 150,
     width: 180,
     margin: 12,
@@ -93,14 +86,8 @@ const styles = StyleSheet.create({
     borderColor: "red",
   },
 
-  Container2: {
-    borderRadius: 35,
-    backgroundColor: "rgba(131, 17, 47, 0.66)",
-    height: 150,
-    width: 180,
-    margin: 12,
-    alignItems: "center",
-    padding: 35,
+  ButtonRed: {
+    backgroundColor: "red",
   },
 
   Text: {
@@ -110,5 +97,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
+  },
+  MainContent: {
+    flexDirection: "row",
+    justifyContent: "center",
   },
 });
