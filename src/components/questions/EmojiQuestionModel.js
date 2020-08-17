@@ -100,32 +100,17 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(EmojiQuestionModel);
 
 const styles = StyleSheet.create({
-  Screen: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  title1: {
-    color: "white",
-    fontSize: 52,
-  },
   TitleView: {
-    flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    marginTop: 50,
-    padding: 50,
+    marginBottom: 10,
   },
   Title: {
     color: "white",
-    fontSize: 32,
+    fontSize: 25,
   },
   Items: {
-    alignItems: "flex-end",
-    justifyContent: "center",
     flexDirection: "row",
-    padding: 20,
-    paddingLeft: 60,
+    justifyContent: "center",
   },
   ImagContainer: {
     width: 90,

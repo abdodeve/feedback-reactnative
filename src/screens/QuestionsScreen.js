@@ -80,8 +80,7 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
             />
           </TouchableOpacity>
         </View>
-        <View style={styles.ItemQuestion}>
-          <Text>questionState: {questionState}</Text>
+        <View style={styles.ItemsQuestion}>
           {allQuestionsComponent[questionState]}
         </View>
       </View>
@@ -125,13 +124,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 10,
   },
-  ItemQuestion: {
+  ItemsQuestion: {
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    flexDirection: "row",
-    marginVertical: 100,
-    width: "100%",
-    height: "100%",
   },
 });

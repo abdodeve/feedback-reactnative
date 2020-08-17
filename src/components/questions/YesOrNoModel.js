@@ -20,11 +20,11 @@ const YesOrNoModel = ({ questions, addQuestion, ownProps }) => {
 
   return (
     <View>
-      <Text style={styles.Title}>
-        Great ! Want To Sign Up For Our Exclusive Email Offers ?
-      </Text>
+      <View style={styles.TitleView}>
+        <Text style={styles.Title}>Was this meal value for money ?</Text>
+      </View>
 
-      <View style={styles.MainContent}>
+      <View style={styles.Items}>
         <TouchableOpacity
           style={styles.Button}
           onPress={() => {
@@ -33,7 +33,7 @@ const YesOrNoModel = ({ questions, addQuestion, ownProps }) => {
             utils.questions.validateAndGoNext(ownProps);
           }}
         >
-          <Text style={styles.Text}>Yes</Text>
+          <Text style={styles.BtnText}>Yes</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -44,7 +44,7 @@ const YesOrNoModel = ({ questions, addQuestion, ownProps }) => {
             utils.questions.validateAndGoNext(ownProps);
           }}
         >
-          <Text style={styles.Text}>No</Text>
+          <Text style={styles.BtnText}>No</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -67,39 +67,36 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(YesOrNoModel);
 
 const styles = StyleSheet.create({
-  Title: {
-    justifyContent: "center",
+  TitleView: {
     alignItems: "center",
+    marginBottom: 10,
+  },
+  Title: {
     color: "white",
     fontSize: 25,
-    paddingBottom: 50,
-    fontWeight: "bold",
   },
   Button: {
     borderRadius: 35,
-    backgroundColor: "green",
+    backgroundColor: "#2ed573",
     height: 150,
     width: 180,
     margin: 12,
+    marginTop: 0,
     alignItems: "center",
     padding: 35,
-    borderColor: "red",
   },
-
+  Items: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
   ButtonRed: {
-    backgroundColor: "red",
+    backgroundColor: "#ff4757",
   },
-
-  Text: {
+  BtnText: {
     color: "white",
     fontSize: 60,
-
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-  },
-  MainContent: {
-    flexDirection: "row",
-    justifyContent: "center",
   },
 });
