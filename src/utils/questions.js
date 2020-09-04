@@ -9,3 +9,13 @@ export const validateAndGoNext = (ownProps) => {
   });
 };
 // @param {nbQuestions, changeQuestionState} ownProps
+
+/**
+ * Prepare and formate data before send it to Server
+ * @param {Object} state
+ */
+export const formatingQuestionsBeforeSending = (state) => {
+  return state.questions.questionsResponses.map(function (currentValue) {
+    return currentValue.question;
+  });
+};

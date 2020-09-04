@@ -1,4 +1,5 @@
 import axios from "axios";
+import { formatingQuestionsBeforeSending } from "../utils/questions";
 
 const addQuestions = (question) => ({
   type: "ADD_QUESTION",
@@ -20,16 +21,40 @@ const fetchUsers = (users) => ({
   users,
 });
 
+// const storeAnswersApi = (arg1) => {
+//   return function (dispatch, getState) {
+//     return axios
+//       .get("https://jsonplaceholder.typicode.com/todos/1")
+//       .then((data) => {
+//         dispatch(storeAnswers(data.data));
+//       })
+//       .catch((error) => {
+//         dispatch({ type: "STORE_ANSWERE_ERROR", error: error });
+//       });
+//   };
+// };
+
 const storeAnswersApi = (arg1) => {
-  return function (dispatch, getState) {
-    return axios
-      .get("1https://jsonplaceholder.typicode.com/todos/1")
-      .then((data) => {
-        dispatch(storeAnswers(data.data));
-      })
-      .catch((error) => {
-        dispatch({ type: "STORE_ANSWERE_ERROR", error: error });
-      });
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch(
+        "https://feedback-mobile-application.firebaseio.com/feedbacks.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({
+            questionsResponses: formatingQuestionsBeforeSending(getState()),
+          }),
+        }
+      );
+      const resData = await response.json();
+      dispatch(storeAnswers(resData));
+    } catch (error) {
+      console.error(error);
+      dispatch({ type: "STORE_ANSWERE_ERROR", error: error });
+    }
   };
 };
 

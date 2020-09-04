@@ -26,7 +26,8 @@ const ValidationModel = ({ questions, storeAnswersApi }) => {
       <TouchableOpacity
         style={styles.BtnValidate}
         onPress={() => {
-          actions.questions.storeAnswersApi(questions);
+          // actions.questions.storeAnswersApi(questions);
+          storeAnswersApi(questions);
         }}
       >
         <Text style={styles.Submit}>Submit</Text>
@@ -45,7 +46,7 @@ const mapDispatchToProps = (dispatch) => {
       // dispatch(actions.questions.addQuestions(response));
     },
     storeAnswersApi: (response) => {
-      // dispatch(actions.questions.storeAnswersApi(response));
+      dispatch(actions.questions.storeAnswersApi(response));
     },
   };
 };
