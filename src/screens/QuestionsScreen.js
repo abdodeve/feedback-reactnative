@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
+  StatusBar,
 } from "react-native";
 import MultipteQuestionsModel from "../components/questions/MultipteQuestionsModel";
 import EmojiQuestionModel from "../components/questions/EmojiQuestionModel";
@@ -31,7 +32,11 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
       currentQuestionState={questionState}
       changeQuestionState={setQuestionState}
     />,
-    <ValidationModel />,
+    <ValidationModel
+      nbQuestions={NB_QUESTIONS}
+      currentQuestionState={questionState}
+      changeQuestionState={setQuestionState}
+    />,
   ];
 
   return (
@@ -40,6 +45,7 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
       style={styles.ImageBg}
     >
       <View style={styles.Overlay}>
+        <StatusBar hidden={true} />
         <View style={styles.container}>
           <TouchableOpacity>
             <AntDesign

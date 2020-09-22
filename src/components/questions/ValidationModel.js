@@ -10,8 +10,9 @@ import {
 import { connect } from "react-redux";
 import { addQuestions, storeAnswersApi } from "../../actions";
 import actions from "../../actions";
+import utils from "../../utils";
 
-const ValidationModel = ({ questions, storeAnswersApi }) => {
+const ValidationModel = ({ questions, storeAnswersApi, ownProps }) => {
   const [responseState, setResponseState] = React.useState({
     questionId: "1",
     questionType: "emoji",
@@ -26,8 +27,11 @@ const ValidationModel = ({ questions, storeAnswersApi }) => {
       <TouchableOpacity
         style={styles.BtnValidate}
         onPress={() => {
-          // actions.questions.storeAnswersApi(questions);
           storeAnswersApi(questions);
+          // Go back to first Question {0}
+          ownProps.changeQuestionState(() => {
+            return 0;
+          });
         }}
       >
         <Text style={styles.Submit}>Submit</Text>
@@ -36,8 +40,9 @@ const ValidationModel = ({ questions, storeAnswersApi }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   questions: state.questions.questionsResponses,
+  ownProps: ownProps,
 });
 
 const mapDispatchToProps = (dispatch) => {
