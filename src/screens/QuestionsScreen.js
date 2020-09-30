@@ -7,9 +7,9 @@ import {
   StyleSheet,
   StatusBar,
 } from "react-native";
-import MultipteQuestionsModel from "../components/questions/MultipteQuestionsModel";
 import EmojiQuestionModel from "../components/questions/EmojiQuestionModel";
 import YesOrNoModel from "../components/questions/YesOrNoModel";
+import MultipleQuestionsModel from "../components/questions/MultipleQuestionsModel";
 import ValidationModel from "../components/questions/ValidationModel";
 import { connect } from "react-redux";
 import { addQuestions } from "../actions";
@@ -22,6 +22,11 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
 
   const NB_QUESTIONS = 3;
   const allQuestionsComponent = [
+    <MultipleQuestionsModel
+      nbQuestions={NB_QUESTIONS}
+      currentQuestionState={questionState}
+      changeQuestionState={setQuestionState}
+    />,
     <YesOrNoModel
       nbQuestions={NB_QUESTIONS}
       currentQuestionState={questionState}
@@ -131,7 +136,6 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   ItemsQuestion: {
-    alignItems: "center",
     justifyContent: "center",
     flex: 1,
   },
