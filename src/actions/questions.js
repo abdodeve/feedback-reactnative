@@ -51,8 +51,9 @@ const storeAnswersApi = (arg1) => {
       );
       const resData = await response.json();
       dispatch(storeAnswers(resData));
+      if (response.hasOwnProperty("ok") && response.ok == false)
+        throw { message: "Request failed", details: JSON.stringify(response) };
     } catch (error) {
-      console.error(error);
       dispatch({ type: "STORE_ANSWERE_ERROR", error: error });
     }
   };

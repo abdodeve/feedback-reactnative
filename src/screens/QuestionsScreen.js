@@ -20,7 +20,7 @@ import { AntDesign } from "@expo/vector-icons";
 const QuestionsScreen = ({ questions, addQuestion }) => {
   const [questionState, setQuestionState] = React.useState(0);
 
-  const NB_QUESTIONS = 3;
+  const NB_QUESTIONS = 4;
   const allQuestionsComponent = [
     <MultipleQuestionsModel
       nbQuestions={NB_QUESTIONS}
@@ -58,8 +58,6 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
               name="leftcircle"
               size={33}
               onPress={() => {
-                console.log("clicked Before", questionState);
-                console.log("state questions ===>", questions);
                 if (questionState <= 0) return;
                 if (questionState > 0) {
                   setQuestionState(() => {

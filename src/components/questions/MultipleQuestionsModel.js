@@ -97,16 +97,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
     textAlign: "center",
   },
-  ImagContainer: {
-    width: 90,
-    height: 90,
-    marginRight: 20,
-    opacity: 0.5,
-  },
-  Disabled: {
-    opacity: 0.5,
-  },
-  Unabled: {
-    opacity: 1,
-  },
 });

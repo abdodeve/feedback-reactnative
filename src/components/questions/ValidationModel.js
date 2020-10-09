@@ -27,11 +27,12 @@ const ValidationModel = ({ questions, storeAnswersApi, ownProps }) => {
       <TouchableOpacity
         style={styles.BtnValidate}
         onPress={() => {
+          console.log("hi");
           storeAnswersApi(questions);
           // Go back to first Question {0}
-          ownProps.changeQuestionState(() => {
-            return 0;
-          });
+          // ownProps.changeQuestionState(() => {
+          //   return 0;
+          // });
         }}
       >
         <Text style={styles.Submit}>Submit</Text>

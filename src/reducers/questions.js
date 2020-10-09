@@ -5,8 +5,6 @@ const initialState = {
 const questions = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_QUESTION":
-      console.log("state==========>", state);
-
       let myNewQuestionsResponses = [];
 
       // Check if questionsResponses is EMPTY
@@ -23,15 +21,12 @@ const questions = (state = initialState, action) => {
         ...state,
         questionsResponses: myNewQuestionsResponses,
       };
-    // console.log("ADD_QUESTION===>", state.questionsResponses);
-    // return { ...state, action };
     case "GET_ALL_QUESTIONS":
       return [...state, action];
     case "STORE_ANSWER":
-      console.log("STORE_ANSWER ==========>", state);
       return { ...state, storeResponse: action };
     case "STORE_ANSWERE_ERROR":
-      console.log("STORE_ANSWERE_ERROR ==========>", state);
+      console.log("STORE_ANSWERE_ERROR ==========>", action);
       return { ...state, STORE_ANSWERE_ERROR: action };
     default:
       return state;

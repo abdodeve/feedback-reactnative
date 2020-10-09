@@ -31,7 +31,7 @@ const SelectableEmojiQuestion = (props) => {
     <View>
       <View style={{ flexDirection: "row" }}>
         <View style={{ flex: 1, backgroundColor: "powderblue" }}>
-          <Text>{props.label}</Text>
+          <Text>{props.label} - aaaaa</Text>
           <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
               onPress={() => {
@@ -90,38 +90,6 @@ const SelectableEmojiQuestion = (props) => {
 };
 
 const styles = StyleSheet.create({
-  TitleView: {
-    alignItems: "center",
-    marginBottom: 10,
-  },
-  Title: {
-    color: "white",
-    fontSize: 25,
-  },
-  Button: {
-    borderRadius: 35,
-    backgroundColor: "#2ed573",
-    height: 150,
-    width: 180,
-    margin: 12,
-    marginTop: 0,
-    alignItems: "center",
-    padding: 35,
-  },
-  Items: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  ButtonRed: {
-    backgroundColor: "#ff4757",
-  },
-  BtnText: {
-    color: "white",
-    fontSize: 60,
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-  },
   ImagContainer: {
     width: 90,
     height: 90,
