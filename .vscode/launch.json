@@ -3,6 +3,21 @@
         {
             "type": "aws-sam",
             "request": "direct-invoke",
+            "name": "react native:src/utils/auth.connect (nodejs10.x)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "",
+                "lambdaHandler": "src/utils/auth.connect"
+            },
+            "lambda": {
+                "runtime": "nodejs10.x",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
             "name": "react native:src/utils/questions.formatingQuestionsBeforeSending (nodejs12.x)",
             "invokeTarget": {
                 "target": "code",

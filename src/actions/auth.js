@@ -1,6 +1,4 @@
-import axios from "axios";
 import { formatingQuestionsBeforeSending } from "../utils/questions";
-import { connect } from "../utils/auth";
 
 const addQuestions = (question) => ({
   type: "ADD_QUESTION",
@@ -36,7 +34,6 @@ const fetchUsers = (users) => ({
 // };
 
 const storeAnswersApi = (arg1) => {
-  connect();
   return async (dispatch, getState) => {
     try {
       const response = await fetch(
