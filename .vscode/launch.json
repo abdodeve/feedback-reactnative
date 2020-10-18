@@ -1,5 +1,21 @@
 {
     "configurations": [
+        
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "react native:src/utils/auth.refreshToken (nodejs10.x)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "",
+                "lambdaHandler": "src/utils/auth.refreshToken"
+            },
+            "lambda": {
+                "runtime": "nodejs10.x",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
         {
             "type": "aws-sam",
             "request": "direct-invoke",
