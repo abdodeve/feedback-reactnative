@@ -25,13 +25,14 @@ export const refreshToken = async () => {
     getAccessToken();
     return true;
   }
-
-  if (!(await isAccessTokenExpired())) {
+  const isAccessExpired = await isAccessTokenExpired();
+  if (!isAccessExpired) {
     try {
       //Refresh the token
-      return await refreshTheToken();
+      const refreshedToken = await refreshTheToken();
+      return true;
     } catch (err) {
-      console.log(err);
+      console.log("isAccessExpired===>", err);
       return false;
     }
   }
@@ -42,7 +43,6 @@ const isAccessTokenExpired = async () => {
   try {
     const currentTime = new Date();
     const idToken = await SecureStore.getItemAsync("idToken");
-
     if (
       moment(currentTime).add(10, "m") < moment(jwt_decode(idToken).exp * 1000)
     ) {
@@ -56,7 +56,9 @@ const isAccessTokenExpired = async () => {
 };
 
 const getAccessToken = async () => {
-  console.log("getAccessToken");
+  console.log(
+    "----------------------- Get Access token - first time -----------------------"
+  );
   try {
     const response = await fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB36LfiWU7kMNoXzcRQ96ebK-_q68OHVUM",
@@ -78,6 +80,9 @@ const getAccessToken = async () => {
 };
 
 const refreshTheToken = async () => {
+  console.log(
+    "----------------------- Get Access token - By refresh token -----------------------"
+  );
   try {
     const refreshToken = await SecureStore.getItemAsync("refreshToken");
     const params = {
@@ -105,7 +110,6 @@ const refreshTheToken = async () => {
       }
     );
     const resData = await response.json();
-    // console.log("resData====>", resData);
     if (resData.error && resData.error.code === 400) return false;
     setAuthData({
       idToken: resData.id_token,

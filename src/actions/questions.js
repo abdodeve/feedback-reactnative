@@ -1,4 +1,6 @@
 import axios from "axios";
+import * as SecureStore from "expo-secure-store";
+
 import { formatingQuestionsBeforeSending } from "../utils/questions";
 import { connect } from "../utils/auth";
 
@@ -36,11 +38,13 @@ const fetchUsers = (users) => ({
 // };
 
 const storeAnswersApi = (arg1) => {
-  connect();
   return async (dispatch, getState) => {
     try {
+      const idToken = await SecureStore.getItemAsync("idToken");
+      connect();
       const response = await fetch(
-        "https://feedback-mobile-application.firebaseio.com/feedbacks.json",
+        "https://feedback-mobile-application.firebaseio.com/feedbacks.json?auth=" +
+          idToken,
         {
           method: "POST",
           headers: {

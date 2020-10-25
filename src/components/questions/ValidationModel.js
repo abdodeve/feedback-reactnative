@@ -8,7 +8,11 @@ import {
   Button,
 } from "react-native";
 import { connect } from "react-redux";
-import { addQuestions, storeAnswersApi } from "../../actions";
+import {
+  addQuestions,
+  storeAnswersApi,
+  refreshTokenAction,
+} from "../../actions";
 import actions from "../../actions";
 import utils from "../../utils";
 
@@ -26,13 +30,12 @@ const ValidationModel = ({ questions, storeAnswersApi, ownProps }) => {
       </View>
       <TouchableOpacity
         style={styles.BtnValidate}
-        onPress={() => {
-          console.log("hi");
+        onPress={async () => {
           storeAnswersApi(questions);
           // Go back to first Question {0}
-          // ownProps.changeQuestionState(() => {
-          //   return 0;
-          // });
+          ownProps.changeQuestionState(() => {
+            return 0;
+          });
         }}
       >
         <Text style={styles.Submit}>Submit</Text>

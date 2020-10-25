@@ -54,6 +54,7 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
         <View style={styles.container}>
           <TouchableOpacity>
             <AntDesign
+              title="[previous]"
               color="white"
               name="leftcircle"
               size={33}
@@ -74,11 +75,6 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
               color="white"
               size={33}
               onPress={() => {
-                console.log("clicked Next");
-                // dispatch(addQuestions({ text1: "hello works" }));
-                console.log("addQuestion===>", addQuestion);
-                // addQuestion(123);
-                // dispatch(addQuestions({ text1: "hello works" }));
                 if (questionState === allQuestionsComponent.length - 1) return;
                 if (questionState < allQuestionsComponent.length - 1) {
                   setQuestionState(() => {
