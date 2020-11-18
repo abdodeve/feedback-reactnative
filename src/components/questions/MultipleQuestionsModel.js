@@ -1,47 +1,116 @@
 import * as React from "react";
 import {
   View,
-  Text,
   StyleSheet,
   Image,
   TouchableOpacity,
   Button,
 } from "react-native";
 import { connect } from "react-redux";
+
 import actions from "../../actions";
 import utils from "../../utils";
 import SelectableEmojiQuestion from "./blocks/SelectableEmojiQuestion";
+import RadioQuestion from "./blocks/RadioQuestion";
+import ContactForm from "./blocks/ContactForm";
+import {
+  Container,
+  Header,
+  Content,
+  ListItem,
+  CheckBox,
+  Text,
+  Body,
+} from "native-base";
 
 const MultipleQuestionsModel = ({ questions, addQuestion, ownProps }) => {
   const [selectedResponseState, setSelectedResponseState] = React.useState([
     {
-      questionId: 0,
+      questionId: "MultipleQuestionsModel-selectableEmoji-0",
+      questionType: "selectableEmoji",
       positionSelected: 1,
     },
     {
-      questionId: 1,
-      positionSelected: 2,
+      questionId: "MultipleQuestionsModel-selectableEmoji-1",
+      questionType: "selectableEmoji",
+      positionSelected: 1,
     },
     {
-      questionId: 2,
-      positionSelected: 0,
+      questionId: "MultipleQuestionsModel-selectableEmoji-2",
+      questionType: "selectableEmoji",
+      positionSelected: 1,
+    },
+    {
+      questionId: "MultipleQuestionsModel-selectableEmoji-3",
+      questionType: "selectableEmoji",
+      positionSelected: 1,
+    },
+    {
+      questionId: "MultipleQuestionsModel-radio-4",
+      questionType: "radio",
+      responseSelected: false,
+    },
+    {
+      questionId: "MultipleQuestionsModel-selectableEmoji-6",
+      questionType: "radio",
+      responseSelected: false,
+    },
+    {
+      questionId: "MultipleQuestionsModel-ContactForm-7",
+      questionType: "contactForm",
+      data: {
+        comments: "",
+        fullname: "",
+        email: "",
+        phone: "",
+        isNewsletterChecked: "",
+      },
     },
   ]);
 
   return (
-    <View>
-      <SelectableEmojiQuestion
-        label="Question 1"
-        questionId={0}
-        selectedResponseState={selectedResponseState}
-        setSelectedResponseState={setSelectedResponseState}
-      />
-      <SelectableEmojiQuestion
-        label="Question 2"
-        questionId={1}
-        selectedResponseState={selectedResponseState}
-        setSelectedResponseState={setSelectedResponseState}
-      />
+    <View style={{ flex: 1, flexDirection: "row" }}>
+      <View style={[styles.column]}>
+        <View>
+          <SelectableEmojiQuestion
+            label="SERVICE"
+            questionId={selectedResponseState[0].questionId}
+            selectedResponseState={selectedResponseState}
+            setSelectedResponseState={setSelectedResponseState}
+          />
+        </View>
+        <View>
+          <SelectableEmojiQuestion
+            label="FOOD"
+            questionId={selectedResponseState[1].questionId}
+            selectedResponseState={selectedResponseState}
+            setSelectedResponseState={setSelectedResponseState}
+          />
+        </View>
+        <View>
+          <RadioQuestion
+            label="Was this meal value for money ?"
+            questionId={selectedResponseState[4].questionId}
+            selectedResponseState={selectedResponseState}
+            setSelectedResponseState={setSelectedResponseState}
+          />
+        </View>
+        <View>
+          <RadioQuestion
+            label="Would you recommend us ?"
+            questionId={selectedResponseState[5].questionId}
+            selectedResponseState={selectedResponseState}
+            setSelectedResponseState={setSelectedResponseState}
+          />
+        </View>
+      </View>
+      <View style={[styles.column]}>
+        <ContactForm
+          questionId={selectedResponseState[6].questionId}
+          selectedResponseState={selectedResponseState}
+          setSelectedResponseState={setSelectedResponseState}
+        />
+      </View>
     </View>
   );
 };
@@ -65,36 +134,7 @@ export default connect(
 )(MultipleQuestionsModel);
 
 const styles = StyleSheet.create({
-  TitleView: {
-    alignItems: "center",
-    marginBottom: 10,
-  },
-  Title: {
-    color: "white",
-    fontSize: 25,
-  },
-  Button: {
-    borderRadius: 35,
-    backgroundColor: "#2ed573",
-    height: 150,
-    width: 180,
-    margin: 12,
-    marginTop: 0,
-    alignItems: "center",
-    padding: 35,
-  },
-  Items: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  ButtonRed: {
-    backgroundColor: "#ff4757",
-  },
-  BtnText: {
-    color: "white",
-    fontSize: 60,
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
+  column: {
+    width: "50%",
   },
 });

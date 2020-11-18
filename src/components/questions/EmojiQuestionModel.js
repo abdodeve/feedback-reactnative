@@ -14,7 +14,7 @@ const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
   return (
     <View style={styles.Screen}>
       <View style={styles.TitleView}>
-        <Text style={styles.Title}>Please Rate Our Service</Text>
+        <Text style={styles.Title}>Please Rate the Waiter</Text>
       </View>
 
       <View style={styles.Items}>
@@ -27,7 +27,7 @@ const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../../assets/images/Emoji/star2.png")}
+            source={require("../../../assets/images/Emoji/emoji-level-1.png")}
           />
         </TouchableOpacity>
 
@@ -40,7 +40,7 @@ const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../../assets/images/Emoji/star2.png")}
+            source={require("../../../assets/images/Emoji/emoji-level-2.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -52,7 +52,7 @@ const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../../assets/images/Emoji/star3.png")}
+            source={require("../../../assets/images/Emoji/emoji-level-3.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -64,7 +64,7 @@ const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../../assets/images/Emoji/star4.png")}
+            source={require("../../../assets/images/Emoji/emoji-level-4.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -76,7 +76,7 @@ const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
         >
           <Image
             style={styles.ImagContainer}
-            source={require("../../../assets/images/Emoji/star5.png")}
+            source={require("../../../assets/images/Emoji/emoji-level-5.png")}
           />
         </TouchableOpacity>
       </View>

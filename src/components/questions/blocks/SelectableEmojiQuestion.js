@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -7,15 +7,20 @@ import {
   TouchableOpacity,
   Button,
 } from "react-native";
+import { connect } from "react-redux";
+import actions from "../../../actions";
 
-const SelectableEmojiQuestion = (props) => {
+const SelectableEmojiQuestion = ({ addQuestion, ownProps }) => {
+  const currentQuestion = ownProps.selectedResponseState.find(
+    (obj) => obj.questionId === ownProps.questionId
+  );
   /**
    * On click to Emoji for Select response
    * @param {*} questionId
    * @param {*} positionSelected
    */
   const onSelectResponse = (questionId, positionSelected) => {
-    props.setSelectedResponseState((currentState) => {
+    ownProps.setSelectedResponseState((currentState) => {
       const updatedState = currentState.map((elment) => {
         if (elment.questionId == questionId) {
           elment.positionSelected = positionSelected;
@@ -30,19 +35,28 @@ const SelectableEmojiQuestion = (props) => {
   return (
     <View>
       <View style={{ flexDirection: "row" }}>
-        <View style={{ flex: 1, backgroundColor: "powderblue" }}>
-          <Text>{props.label} - aaaaa</Text>
-          <View style={{ flexDirection: "row" }}>
+        <View style={{ flex: 1, marginBottom: 8 }}>
+          <Text
+            style={{
+              marginLeft: 20,
+              fontSize: 20,
+              fontWeight: "bold",
+              marginBottom: 5,
+              color: "#fff",
+            }}
+          >
+            {ownProps.label}
+          </Text>
+          <View style={{ flexDirection: "row", marginLeft: 20 }}>
             <TouchableOpacity
               onPress={() => {
-                onSelectResponse(props.questionId, 0);
+                onSelectResponse(ownProps.questionId, 0);
               }}
             >
               <Image
                 style={[
                   styles.ImagContainer,
-                  props.selectedResponseState[props.questionId]
-                    .positionSelected === 0
+                  currentQuestion.positionSelected === 0
                     ? styles.Unabled
                     : styles.Disabled,
                 ]}
@@ -51,14 +65,16 @@ const SelectableEmojiQuestion = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                onSelectResponse(props.questionId, 1);
+                onSelectResponse(ownProps.questionId, 1);
+                ownProps.selectedResponseState.forEach((value) => {
+                  addQuestion(value);
+                });
               }}
             >
               <Image
                 style={[
                   styles.ImagContainer,
-                  props.selectedResponseState[props.questionId]
-                    .positionSelected === 1
+                  currentQuestion.positionSelected === 1
                     ? styles.Unabled
                     : styles.Disabled,
                 ]}
@@ -67,14 +83,16 @@ const SelectableEmojiQuestion = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                onSelectResponse(props.questionId, 2);
+                onSelectResponse(ownProps.questionId, 2);
+                ownProps.selectedResponseState.forEach((value) => {
+                  addQuestion(value);
+                });
               }}
             >
               <Image
                 style={[
                   styles.ImagContainer,
-                  props.selectedResponseState[props.questionId]
-                    .positionSelected === 2
+                  currentQuestion.positionSelected === 2
                     ? styles.Unabled
                     : styles.Disabled,
                 ]}
@@ -83,16 +101,27 @@ const SelectableEmojiQuestion = (props) => {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={{ flex: 1, height: 50, backgroundColor: "skyblue" }} />
       </View>
     </View>
   );
 };
 
+const mapStateToProps = (state, ownProps) => ({
+  ownProps: ownProps,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addQuestion: (response) => {
+      dispatch(actions.questions.addQuestions(response));
+    },
+  };
+};
+
 const styles = StyleSheet.create({
   ImagContainer: {
-    width: 90,
-    height: 90,
+    width: 60,
+    height: 60,
     marginRight: 20,
     opacity: 0.5,
   },
@@ -104,4 +133,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SelectableEmojiQuestion;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SelectableEmojiQuestion);

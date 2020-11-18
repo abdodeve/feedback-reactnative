@@ -1,7 +1,6 @@
 import * as React from "react";
 import {
   View,
-  Text,
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
@@ -22,17 +21,17 @@ const QuestionsScreen = ({ questions, addQuestion }) => {
 
   const NB_QUESTIONS = 4;
   const allQuestionsComponent = [
-    <MultipleQuestionsModel
-      nbQuestions={NB_QUESTIONS}
-      currentQuestionState={questionState}
-      changeQuestionState={setQuestionState}
-    />,
     <YesOrNoModel
       nbQuestions={NB_QUESTIONS}
       currentQuestionState={questionState}
       changeQuestionState={setQuestionState}
     />,
     <EmojiQuestionModel
+      nbQuestions={NB_QUESTIONS}
+      currentQuestionState={questionState}
+      changeQuestionState={setQuestionState}
+    />,
+    <MultipleQuestionsModel
       nbQuestions={NB_QUESTIONS}
       currentQuestionState={questionState}
       changeQuestionState={setQuestionState}

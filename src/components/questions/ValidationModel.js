@@ -16,7 +16,12 @@ import {
 import actions from "../../actions";
 import utils from "../../utils";
 
-const ValidationModel = ({ questions, storeAnswersApi, ownProps }) => {
+const ValidationModel = ({
+  questions,
+  storeAnswersApi,
+  resetQuestions,
+  ownProps,
+}) => {
   const [responseState, setResponseState] = React.useState({
     questionId: "1",
     questionType: "emoji",
@@ -32,6 +37,7 @@ const ValidationModel = ({ questions, storeAnswersApi, ownProps }) => {
         style={styles.BtnValidate}
         onPress={async () => {
           storeAnswersApi(questions);
+          console.log("questions===>", questions);
           // Go back to first Question {0}
           ownProps.changeQuestionState(() => {
             return 0;
@@ -56,6 +62,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     storeAnswersApi: (response) => {
       dispatch(actions.questions.storeAnswersApi(response));
+    },
+    resetQuestions: () => {
+      dispatch(actions.questions.resetQuestions());
     },
   };
 };

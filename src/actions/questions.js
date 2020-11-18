@@ -9,6 +9,10 @@ const addQuestions = (question) => ({
   question,
 });
 
+const resetQuestions = () => ({
+  type: "RESET_QUESTIONS",
+});
+
 const showQuestions = (text) => ({
   type: "SHOW_QUESTION",
   text,
@@ -40,8 +44,8 @@ const fetchUsers = (users) => ({
 const storeAnswersApi = (arg1) => {
   return async (dispatch, getState) => {
     try {
+      await connect();
       const idToken = await SecureStore.getItemAsync("idToken");
-      connect();
       const response = await fetch(
         "https://feedback-mobile-application.firebaseio.com/feedbacks.json?auth=" +
           idToken,
@@ -57,6 +61,7 @@ const storeAnswersApi = (arg1) => {
       );
       const resData = await response.json();
       dispatch(storeAnswers(resData));
+      dispatch(resetQuestions());
       if (response.hasOwnProperty("ok") && response.ok == false)
         throw { message: "Request failed", details: JSON.stringify(response) };
     } catch (error) {
@@ -78,6 +83,7 @@ const fetchArticleDetails = (arg1) => {
 
 export default {
   addQuestions,
+  resetQuestions,
   showQuestions,
   storeAnswers,
   fetchUsers,

@@ -21,7 +21,7 @@ const YesOrNoModel = ({ questions, addQuestion, ownProps }) => {
   return (
     <View>
       <View style={styles.TitleView}>
-        <Text style={styles.Title}>Was this meal value for money ?</Text>
+        <Text style={styles.Title}>Did you like the Ambience ?</Text>
       </View>
 
       <View style={styles.Items}>

@@ -8,7 +8,7 @@ const questions = (state = initialState, action) => {
       let myNewQuestionsResponses = [];
 
       // Check if questionsResponses is EMPTY
-      if (state.questionsResponses.length == 0) {
+      if (!state.questionsResponses.length) {
         myNewQuestionsResponses.push(action);
       } else {
         // If the response already exist repalce it by the new one
@@ -20,6 +20,11 @@ const questions = (state = initialState, action) => {
       return {
         ...state,
         questionsResponses: myNewQuestionsResponses,
+      };
+    case "RESET_QUESTIONS":
+      return {
+        ...state,
+        questionsResponses: [],
       };
     case "GET_ALL_QUESTIONS":
       return [...state, action];

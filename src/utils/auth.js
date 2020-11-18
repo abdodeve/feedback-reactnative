@@ -18,11 +18,11 @@ export const refreshToken = async () => {
   try {
     const decoded_idToken = jwt_decode(idToken);
     if (!idToken || !decoded_idToken) {
-      getAccessToken();
+      await getAccessToken();
       return true;
     }
   } catch (error) {
-    getAccessToken();
+    await getAccessToken();
     return true;
   }
   const isAccessExpired = await isAccessTokenExpired();
