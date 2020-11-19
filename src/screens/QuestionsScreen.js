@@ -11,12 +11,10 @@ import YesOrNoModel from "../components/questions/YesOrNoModel";
 import MultipleQuestionsModel from "../components/questions/MultipleQuestionsModel";
 import ValidationModel from "../components/questions/ValidationModel";
 import { connect } from "react-redux";
-import { addQuestions } from "../actions";
-import UserInfoQuestionModel from "../components/questions/UserInfoQuestionModel";
 
 import { AntDesign } from "@expo/vector-icons";
 
-const QuestionsScreen = ({ questions, addQuestion }) => {
+const QuestionsScreen = () => {
   const [questionState, setQuestionState] = React.useState(0);
 
   const NB_QUESTIONS = 4;
@@ -96,16 +94,8 @@ const mapStateToProps = (state) => ({
   questions: state,
 });
 
-// const mapDispatchToProps = (dispatch) => ( {
-//   addQuestion: () => dispatch(addQuestions({ text1: "hello works" })),
-// });
-
 const mapDispatchToProps = (dispatch) => {
-  return {
-    // addQuestion: (nb) => {
-    //   dispatch(addQuestions({ text1: "hello works 111" }));
-    // },
-  };
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionsScreen);

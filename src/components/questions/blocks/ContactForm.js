@@ -1,29 +1,10 @@
 import React, { useState, useEffect } from "react";
 // import CheckBox from "@react-native-community/checkbox";
 
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Button,
-} from "react-native";
-import {
-  Layout,
-  Radio,
-  RadioGroup,
-  Text,
-  Input,
-  CheckBox,
-} from "@ui-kitten/components";
+import { View, StyleSheet } from "react-native";
+import { Layout, Text, Input, CheckBox } from "@ui-kitten/components";
 import { connect } from "react-redux";
 import actions from "../../../actions";
-import * as SecureStore from "expo-secure-store";
-
-const useCheckboxState = (initialCheck = false) => {
-  const [checked, setChecked] = React.useState(initialCheck);
-  return { checked, onChange: setChecked };
-};
 
 const ContactForm = ({ addQuestion, ownProps }) => {
   const [comments, setComments] = React.useState("");
@@ -69,16 +50,7 @@ const ContactForm = ({ addQuestion, ownProps }) => {
 
   return (
     <View style={styles.container}>
-      <Text
-        style={{
-          fontSize: 17,
-          fontWeight: "bold",
-          marginBottom: 5,
-          color: "#fff",
-        }}
-      >
-        Additional comments (Optional)
-      </Text>
+      <Text style={styles.TitleForm}>Additional comments (Optional)</Text>
       <Input
         style={styles.paddingBottomInputs}
         multiline
@@ -171,6 +143,12 @@ const styles = StyleSheet.create({
   },
   paddingBottomInputs: {
     paddingBottom: 5,
+  },
+  TitleForm: {
+    fontSize: 17,
+    fontWeight: "bold",
+    marginBottom: 5,
+    color: "#fff",
   },
 });
 

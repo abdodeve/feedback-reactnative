@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Button,
-} from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 import actions from "../../../actions";
 
@@ -35,19 +28,9 @@ const SelectableEmojiQuestion = ({ addQuestion, ownProps }) => {
   return (
     <View>
       <View style={{ flexDirection: "row" }}>
-        <View style={{ flex: 1, marginBottom: 8 }}>
-          <Text
-            style={{
-              marginLeft: 20,
-              fontSize: 20,
-              fontWeight: "bold",
-              marginBottom: 5,
-              color: "#fff",
-            }}
-          >
-            {ownProps.label}
-          </Text>
-          <View style={{ flexDirection: "row", marginLeft: 20 }}>
+        <View style={styles.Container}>
+          <Text style={styles.Title}>{ownProps.label}</Text>
+          <View style={styles.Wrapper}>
             <TouchableOpacity
               onPress={() => {
                 onSelectResponse(ownProps.questionId, 0);
@@ -131,6 +114,18 @@ const styles = StyleSheet.create({
   Unabled: {
     opacity: 1,
   },
+  Title: {
+    marginLeft: 20,
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 5,
+    color: "#fff",
+  },
+  Container: {
+    flex: 1,
+    marginBottom: 8,
+  },
+  Wrapper: { flexDirection: "row", marginLeft: 20 },
 });
 
 export default connect(

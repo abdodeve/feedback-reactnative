@@ -1,27 +1,11 @@
 import * as React from "react";
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Button,
-} from "react-native";
+import { View, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 
 import actions from "../../actions";
-import utils from "../../utils";
 import SelectableEmojiQuestion from "./blocks/SelectableEmojiQuestion";
 import RadioQuestion from "./blocks/RadioQuestion";
 import ContactForm from "./blocks/ContactForm";
-import {
-  Container,
-  Header,
-  Content,
-  ListItem,
-  CheckBox,
-  Text,
-  Body,
-} from "native-base";
 
 const MultipleQuestionsModel = ({ questions, addQuestion, ownProps }) => {
   const [selectedResponseState, setSelectedResponseState] = React.useState([

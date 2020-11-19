@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import CheckBox from "@react-native-community/checkbox";
 
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Button,
-} from "react-native";
-import { Layout, Radio, RadioGroup, Text } from "@ui-kitten/components";
+import { View, StyleSheet } from "react-native";
+import { Radio, Text } from "@ui-kitten/components";
 import { connect } from "react-redux";
 import actions from "../../../actions";
 
@@ -36,18 +29,8 @@ const RadioQuestion = ({ addQuestion, ownProps }) => {
 
   return (
     <View>
-      <Text
-        style={{
-          marginLeft: 20,
-          fontSize: 17,
-          fontWeight: "bold",
-          marginBottom: 5,
-          color: "#fff",
-        }}
-      >
-        {ownProps.label}
-      </Text>
-      <View style={{ flexDirection: "row", marginLeft: 20, flexWrap: "wrap" }}>
+      <Text style={styles.Title}>{ownProps.label}</Text>
+      <View style={styles.Wrapper}>
         <Radio
           style={styles.radio}
           status="success"
@@ -63,9 +46,7 @@ const RadioQuestion = ({ addQuestion, ownProps }) => {
             });
           }}
         >
-          <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}>
-            Yes
-          </Text>
+          <Text style={styles.TextRadio}>Yes</Text>
         </Radio>
         <Radio
           style={styles.radio}
@@ -82,9 +63,7 @@ const RadioQuestion = ({ addQuestion, ownProps }) => {
             });
           }}
         >
-          <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}>
-            No
-          </Text>
+          <Text style={styles.TextRadio}>No</Text>
         </Radio>
       </View>
     </View>
@@ -111,6 +90,15 @@ const styles = StyleSheet.create({
   radio: {
     margin: 2,
   },
+  Title: {
+    marginLeft: 20,
+    fontSize: 17,
+    fontWeight: "bold",
+    marginBottom: 5,
+    color: "#fff",
+  },
+  Wrapper: { flexDirection: "row", marginLeft: 20, flexWrap: "wrap" },
+  TextRadio: { color: "#fff", fontSize: 20, fontWeight: "bold" },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RadioQuestion);

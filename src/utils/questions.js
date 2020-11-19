@@ -8,7 +8,6 @@ export const validateAndGoNext = (ownProps) => {
     return ownProps.currentQuestionState + 1;
   });
 };
-// @param {nbQuestions, changeQuestionState} ownProps
 
 /**
  * Prepare and formate data before send it to Server

@@ -1,33 +1,9 @@
 import * as React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Button,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
-import {
-  addQuestions,
-  storeAnswersApi,
-  refreshTokenAction,
-} from "../../actions";
 import actions from "../../actions";
-import utils from "../../utils";
 
-const ValidationModel = ({
-  questions,
-  storeAnswersApi,
-  resetQuestions,
-  ownProps,
-}) => {
-  const [responseState, setResponseState] = React.useState({
-    questionId: "1",
-    questionType: "emoji",
-    selectedResponse: null,
-  });
-
+const ValidationModel = ({ questions, storeAnswersApi, ownProps }) => {
   return (
     <View style={styles.Screen}>
       <View style={styles.TitleView}>
@@ -57,9 +33,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addQuestion: (response) => {
-      // dispatch(actions.questions.addQuestions(response));
-    },
+    addQuestion: (response) => {},
     storeAnswersApi: (response) => {
       dispatch(actions.questions.storeAnswersApi(response));
     },

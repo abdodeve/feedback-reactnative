@@ -9,6 +9,9 @@ export const connect = async () => {
   const res = await refreshToken();
 };
 
+/**
+ * refresh the token if expired
+ */
 export const refreshToken = async () => {
   const idToken = await SecureStore.getItemAsync("idToken");
   /*
@@ -39,6 +42,9 @@ export const refreshToken = async () => {
   return false;
 };
 
+/**
+ * Check validity of access-token
+ */
 const isAccessTokenExpired = async () => {
   try {
     const currentTime = new Date();
@@ -55,6 +61,9 @@ const isAccessTokenExpired = async () => {
   }
 };
 
+/**
+ * Retrieve access token
+ */
 const getAccessToken = async () => {
   console.log(
     "----------------------- Get Access token - first time -----------------------"
@@ -79,18 +88,24 @@ const getAccessToken = async () => {
   }
 };
 
+/**
+ * If token expired retrieve new access-token by refreshing
+ */
 const refreshTheToken = async () => {
   console.log(
     "----------------------- Get Access token - By refresh token -----------------------"
   );
   try {
+    // Get refresh-token
     const refreshToken = await SecureStore.getItemAsync("refreshToken");
+    // Params of request
     const params = {
       grant_type: "refresh_token",
       refresh_token: refreshToken,
     };
     let formBody = [];
 
+    // Encode params (application/x-www-form-urlencoded)
     for (let property in params) {
       let encodedKey = encodeURIComponent(property);
       let encodedValue = encodeURIComponent(params[property]);
@@ -98,6 +113,7 @@ const refreshTheToken = async () => {
     }
     formBody = formBody.join("&");
 
+    // Fetch refresh_token
     const response = await fetch(
       "https://securetoken.googleapis.com/v1/token?key=AIzaSyB36LfiWU7kMNoXzcRQ96ebK-_q68OHVUM",
       {
@@ -111,6 +127,7 @@ const refreshTheToken = async () => {
     );
     const resData = await response.json();
     if (resData.error && resData.error.code === 400) return false;
+    // Set new tokens
     setAuthData({
       idToken: resData.id_token,
       refreshToken: resData.refresh_token,
@@ -122,12 +139,20 @@ const refreshTheToken = async () => {
   }
 };
 
+/**
+ * Set Tokens in SecureStore
+ * @param {*} authData
+ */
 const setAuthData = (authData) => {
   for (let property in authData) {
     SecureStore.setItemAsync(property, authData[property]);
   }
 };
 
+/**
+ * Reset Tokens from SecureStore
+ * @param {*} authData
+ */
 const resetAuthData = (authData) => {
   for (let property in authData) {
     SecureStore.deleteItemAsync(authData[property]);
