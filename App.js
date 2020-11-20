@@ -13,7 +13,6 @@ import rootReducer from "./src/reducers";
 import { connect } from "./src/utils/auth";
 
 import { AppLoading } from "expo";
-import { Container, Text } from "native-base";
 import * as Font from "expo-font";
 
 import * as eva from "@eva-design/eva";
@@ -28,12 +27,6 @@ export default function App(props) {
 
   useEffect(() => {
     async function onLoad() {
-      // Load fonts
-      await Font.loadAsync({
-        Roboto: require("native-base/Fonts/Roboto.ttf"),
-        Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-        ...Ionicons.font,
-      });
       // connect to firebase
       await connect();
       // Change state to ready

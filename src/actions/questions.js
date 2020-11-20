@@ -1,4 +1,3 @@
-import axios from "axios";
 import * as SecureStore from "expo-secure-store";
 
 import { formatingQuestionsBeforeSending } from "../utils/questions";
@@ -27,19 +26,6 @@ const fetchUsers = (users) => ({
   type: "FETCH_USERS",
   users,
 });
-
-// const storeAnswersApi = (arg1) => {
-//   return function (dispatch, getState) {
-//     return axios
-//       .get("https://jsonplaceholder.typicode.com/todos/1")
-//       .then((data) => {
-//         dispatch(storeAnswers(data.data));
-//       })
-//       .catch((error) => {
-//         dispatch({ type: "STORE_ANSWERE_ERROR", error: error });
-//       });
-//   };
-// };
 
 const storeAnswersApi = (arg1) => {
   return async (dispatch, getState) => {
@@ -70,17 +56,6 @@ const storeAnswersApi = (arg1) => {
   };
 };
 
-const fetchArticleDetails = (arg1) => {
-  return function (dispatch, getState) {
-    return axios
-      .get("https://jsonplaceholder.typicode.com/todos/1")
-      .then((data) => {
-        // console.log("data--->", data.data);
-        dispatch(fetchUsers(data.data));
-      });
-  };
-};
-
 export default {
   addQuestions,
   resetQuestions,
@@ -88,5 +63,4 @@ export default {
   storeAnswers,
   fetchUsers,
   storeAnswersApi,
-  fetchArticleDetails,
 };

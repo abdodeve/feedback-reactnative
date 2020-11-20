@@ -6,7 +6,7 @@ import utils from "../../utils";
 
 const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
   const [responseState, setResponseState] = React.useState({
-    questionId: "1",
+    questionId: `EmojiQuestionModel-emoji-${Date.now()}`,
     questionType: "emoji",
     selectedResponse: null,
   });
@@ -14,7 +14,7 @@ const EmojiQuestionModel = ({ questions, addQuestion, ownProps }) => {
   return (
     <View style={styles.Screen}>
       <View style={styles.TitleView}>
-        <Text style={styles.Title}>Please Rate the Waiter</Text>
+        <Text style={styles.Title}>{ownProps.Title}</Text>
       </View>
 
       <View style={styles.Items}>

@@ -25,6 +25,7 @@ const QuestionsScreen = () => {
       changeQuestionState={setQuestionState}
     />,
     <EmojiQuestionModel
+      Title="Please Rate the Waiter"
       nbQuestions={NB_QUESTIONS}
       currentQuestionState={questionState}
       changeQuestionState={setQuestionState}
