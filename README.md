@@ -109,6 +109,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [Abdelhadi Habchi](https://www.linkedin.com/in/abdelhadi-habchi-4a3014135/) - abdelhadi.deve@gmail.com
+[Abdelhadi Habchi](https://www.linkedin.com/in/abdelhadi-habchi-4a3014135/) - abdelhadi.deve@gmail.com
+
+[Amine Hmidouche](https://ma.linkedin.com/in/amine-dev) - amine.102.hmidouche@gmail.com
 
 Project Link: [https://github.com/abdodeve/feedback-reactnative](https://github.com/abdodeve/feedback-reactnative)
