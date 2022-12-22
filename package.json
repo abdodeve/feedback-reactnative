@@ -29,7 +29,7 @@
     "expo-screen-orientation": "~1.0.0",
     "expo-secure-store": "^9.2.0",
     "expo-web-browser": "~8.1.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^3.0.0",
     "moment": "^2.29.1",
     "react": "~16.9.0",
